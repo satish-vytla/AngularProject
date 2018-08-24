@@ -1,0 +1,23 @@
+
+
+  <div fxFlex="100">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+            <h3>Comments</h3>
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content *ngFor="let dish of myDish">
+        <p class="left"> 
+            {{dish.comment}}<br>
+          {{dish.rating}} <br>
+          -- {{dish.author}} {{dish.date|date:'MMM dd, yyyy'}} 
+          <br><br>
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
