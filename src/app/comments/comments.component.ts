@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { DishdetailComponent } from '../dishdetail/dishdetail.component';
+import { Component, OnInit, Input } from '@angular/core';
+import {Dish} from '../shared/dish';
 
 @Component({
   selector: 'app-comments',
@@ -7,21 +7,11 @@ import { DishdetailComponent } from '../dishdetail/dishdetail.component';
   styleUrls: ['./comments.component.scss']
 })
 export class CommentsComponent implements OnInit {
-  myName: String;
-  private myDish:{};
-  constructor(private dishdetailcomponent: DishdetailComponent) {
-    this.dishdetailcomponent.dish.comments;
+
+  @Input() satishComments: Dish;
+
+  constructor() {
   }
   ngOnInit() {
-    this.testFunction();
   }
-
-  testFunction() {
-    // this.dishdetailcomponent.cast.subscribe(myName=>this.myName=myName);
-    console.log('-----------this.dishdetailcomponent.dish.comments',this.dishdetailcomponent.dish.comments);
-    this.myDish = this.dishdetailcomponent.dish.comments;
-    console.log(this.myDish);
-
-  }
-
 }
